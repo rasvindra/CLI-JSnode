@@ -2,29 +2,30 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(prjLicense) {
-
+const badges = {
+  IBM:`[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)`,
+  MIT:`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`,
+  MOZILLA:`[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`,
+  APACHE:`[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`,
+  ISC:`[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`,
+}
+return badges[prjLicense]
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-//function renderLicenseLink(prjLicense) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-//function renderLicenseSection(prjLicense) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(ans) {
   return `
 
 # ${ans.prjName}
+${renderLicenseBadge(ans.prjLicense)}
 
 ## Table of Contents
 * [Description](#description)
 * [Install](#install)
 * [Contribution](#contribution)
 * [Usage](#usage)
-* [Test](#test)
+* [Testing](#testing)
 * [Questions](#questions)
 * [License](#license)
 
@@ -32,21 +33,22 @@ function generateMarkdown(ans) {
 ## Description
 ${ans.prjDesc}
 
-## Install Instructions
+## Install
 ${ans.prjInstall}
 
-## Contribution Notes
+## Contribution
 ${ans.prjCont}
 
-## Usage Agreements
+## Usage
 ${ans.prjUsage}
 
-## Testing Information
+## Testing
 ${ans.prjTest}
 
-### Questions
+## Questions
+Please reach out to me though my GitHub or via E-mail with any questions or concerns you may have
 ${ans.userEmail}
-${ans.gitLink}
+${"github.com/"+ans.gitLink}
 
 ## License
 ${ans.prjLicense}

@@ -1,7 +1,6 @@
 const fs = require('fs')
 const inquirer = require('inquirer');
 const generateMarkdown = require('./Utils/generatemarkdown');
-const createReadme = require('./Utils/generatemarkdown')
 
 function init(){
 inquirer.prompt ([  
@@ -49,7 +48,7 @@ inquirer.prompt ([
     message: "Please choose your license from the options provided.",
     type: "list",
     name: "prjLicense",
-    choices: ['IBM','MIT','MOZILLA','APACHE']
+    choices: ['IBM','MIT','MOZILLA','APACHE','ISC']
 },
 ]).then ((ans) => {
     const working = generateMarkdown(ans)
