@@ -46,8 +46,8 @@ ${ans.prjUsage}
 ${ans.prjTest}
 
 ## Questions
-Please reach out to me though my GitHub or via E-mail with any questions or concerns you may have
-${ans.userEmail}
+Please reach out to me though my GitHub or via E-mail with any questions or concerns you may have <br/>
+${ans.userEmail} <br/>
 ${"github.com/"+ans.gitLink}
 
 ## License
