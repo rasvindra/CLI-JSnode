@@ -3,7 +3,9 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./Utils/generatemarkdown');
 const createReadme = require('./Utils/generatemarkdown')
 
-inquirer.prompt ([  {
+function init(){
+inquirer.prompt ([  
+    {
     message: "What is your project title?",
     type: "input",
     name: "prjName",
@@ -50,24 +52,13 @@ inquirer.prompt ([  {
     choices: ['IBM','MIT','MOZILLA','APACHE']
 },
 ]).then ((ans) => {
-    const working = generateMarkdown(ans);
-    console.log(working)
-    fs.writeFile('./README.md',working,)
-    function(err){
+    const working = generateMarkdown(ans)
+    fs.writeFile('README.md',working,function(err){
         if (err) console.log ("error",err)
-
-    })
+    }
+)
+})
 }
 
 
-
-
-//TODO: Create a function to write README file
-//function writeToFile(README, data) {}
-
-// TODO: Create a function to initialize app
-//function init() {}
-// Function call to initialize app
-function init()
-generateMarkdown(...ans);
-createReadme({...ans})
+init()
